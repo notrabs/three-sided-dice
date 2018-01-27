@@ -1,0 +1,58 @@
+<script src="./lib/cannon.js"></script>
+<script src="./lib/three.js"></script>
+<script src="./lib/OrbitControls.js"></script>
+<script src="./lib/dat.gui.js"></script>
+<link rel="stylesheet" href="./lib/dat.gui.css">
+
+<script src="index.js"></script>
+
+<style>
+    body {
+        margin: 0px;
+        background-color: #000000;
+        overflow: hidden;
+        font: 14px 'Lucida Grande', sans-serif;
+    }
+
+    .results-container{
+        color:white;
+        width:100%;
+        text-align: center;
+        padding-top: 10px;
+        background: rgba(0,0,0,0.6);
+        position:relative;
+    }
+
+    canvas{
+        position:absolute;
+        top:0px;
+        left:0px;
+    }
+
+    .credits{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom:10px;
+        color: white;
+    }
+
+    .credits a{
+        color: yellow;
+        text-decoration: none;
+    }
+
+</style>
+
+<div class="results-container" id="currentResult">Results (heads, edges, tails for ratio <span id="ratio">-</span>): <span id="results" style="font-weight: bold"></span></div>
+<div class="results-container" id="lastresult0"></div>
+<div class="results-container" id="lastresult1"></div>
+<div class="results-container" id="lastresult2"></div>
+
+<div class="credits">
+    three-sided-dice is using
+    <a href="https://threejs.org/" target="_blank">threejs</a>,
+    <a href="http://www.cannonjs.org/" target="_blank">cannon.js</a> physics and
+    <a href="https://github.com/dataarts/dat.gui" target="_blank">dat.gui</a>. Also visit the
+    <a href="https://www.youtube.com/watch?v=-qqPKKOU-yY" target="_blank">Inspiration</a> for this.
+</div>
