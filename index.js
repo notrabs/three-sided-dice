@@ -111,7 +111,14 @@ window.onload = function() {
 
 	var f2 = gui.addFolder('Settings:');
 	f2.open();
-	f2.add(sim, 'speed', { '1x': 1, '2x': 2, '4x': 4, '8x': 8, 'unlimited ( lower threads if your computer stops responding, have fun) ': 0 } );
+	f2.add(sim, 'speed', { '1x': 1, '2x': 2, '4x': 4, '8x': 8, 'unlimited ( lower threads if your computer stops responding, have fun) ': 0 } ).onChange(function (value) {
+		for (var i=0;i<activeWorkers;i++){
+			physicsWorkers[i].postMessage({
+				action: 'speed',
+				speed: sim.speed,
+			});
+		}
+	});
 	f2.add(sim, 'secretMode' );
 	//gui.add(sim, 'explode');
 
